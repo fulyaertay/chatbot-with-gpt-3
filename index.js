@@ -1,3 +1,6 @@
+import { initializeApp } from 'firebase/app'
+import { getDatabase, ref } from 'firebase/database'
+
 import { Configuration, OpenAIApi } from 'openai'
 import { process } from './env'
 
@@ -7,13 +10,23 @@ const configuration = new Configuration({
 
 const openai = new OpenAIApi(configuration)
 
+const appSettings = {
+    databaseURL: 'https://chatbot-b289a-default-rtdb.firebaseio.com/'
+}
+
+const app = initializeApp(appSettings)
+
+const database = getDatabase(app)
+
+const conversationInDb = ref(database)
+
 const chatbotConversation = document.getElementById('chatbot-conversation')
  
 const conversationArr = [
     {
         role: 'system',
         content: 'You are an assistant that gives very short answers.'
-    }
+    } 
 ] 
  
 document.addEventListener('submit', (e) => {
@@ -38,20 +51,9 @@ async function fetchReply(){
         messages: conversationArr,
         presence_penalty: 0,
         frequency_penalty: 0.3
-/*
-Challenge:
-    1. Set the frequency_penalty to 0.
-    2. Give the chatbot this query: Generate 20 ways to 
-       say "you can't buy that because you're broke".
-    3. Paste the results into output.md.
-    4. Repeat the process with frequency_penalty set to 2.
-    7. Examine the differences between the 2 outputs.
-    ⚠️ DO NOT SET frequency_penalty to -2!!!
-*/
     }) 
     conversationArr.push(response.data.choices[0].message)
-    // renderTypewriterText(response.data.choices[0].message.content)
-    console.log(response.data.choices[0].message.content)
+    renderTypewriterText(response.data.choices[0].message.content)
 }
 
 function renderTypewriterText(text) {
