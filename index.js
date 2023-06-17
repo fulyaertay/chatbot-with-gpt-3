@@ -12,7 +12,7 @@ const chatbotConversation = document.getElementById('chatbot-conversation')
 const conversationArr = [
     {
         role: 'system',
-        content: 'You are a highly knowledgeable assistant that is always happy to help.'
+        content: 'You are an assistant that gives very short answers.'
     }
 ] 
  
