@@ -8,10 +8,22 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 const chatbotConversation = document.getElementById('chatbot-conversation')
-
+ 
+const conversationArr = [
+    {
+        role: 'system',
+        content: 'You are a highly knowledgeable assistant that is always happy to help.'
+    }
+] 
+ 
 document.addEventListener('submit', (e) => {
     e.preventDefault()
-    const userInput = document.getElementById('user-input')
+    const userInput = document.getElementById('user-input')   
+    conversationArr.push({ 
+        role: 'user',
+        content: userInput.value
+    })
+    fetchReply()
     const newSpeechBubble = document.createElement('div')
     newSpeechBubble.classList.add('speech', 'speech-human')
     chatbotConversation.appendChild(newSpeechBubble)
@@ -19,6 +31,15 @@ document.addEventListener('submit', (e) => {
     userInput.value = ''
     chatbotConversation.scrollTop = chatbotConversation.scrollHeight
 })
+
+async function fetchReply(){
+    const response = await openai.createChatCompletion({
+        model: 'gpt-4',
+        messages: conversationArr  
+    })
+    conversationArr.push(response.data.choices[0].message)
+    renderTypewriterText(response.data.choices[0].message.content)
+}
 
 function renderTypewriterText(text) {
     const newSpeechBubble = document.createElement('div')
