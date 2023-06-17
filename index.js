@@ -1,17 +1,21 @@
-import { initializeApp } from './firebase/app'
-import { getDatabase, ref, push, get, remove } from './firebase/database'
+import { initializeApp } from 'firebase/app'
+import { getDatabase, ref, push, get, remove } from "firebase/database";
 
-import { Configuration, OpenAIApi } from './openai'
-import { process } from './env'
+import { process } from './env.js'
+
+import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
+    apiKey: "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",
 })
+
+delete configuration.baseOptions.headers['User-Agent'];
+
 
 const openai = new OpenAIApi(configuration)
 
 const appSettings = {
-    databaseURL: 'https://knowitall-openai-default-rtdb.europe-west1.firebasedatabase.app/'
+    databaseURL: 'https://gpt-4-project-cafcf-default-rtdb.europe-west1.firebasedatabase.app/'
 }
 
 const app = initializeApp(appSettings)
@@ -49,7 +53,7 @@ function fetchReply() {
             const conversationArr = Object.values(snapshot.val())
             conversationArr.unshift(instructionObj)
             const response = await openai.createChatCompletion({
-                model: 'gpt-4',
+                model: 'gpt-3.5-turbo',
                 messages: conversationArr,
                 presence_penalty: 0,
                 frequency_penalty: 0.3
