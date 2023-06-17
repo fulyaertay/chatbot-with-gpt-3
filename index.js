@@ -6,7 +6,7 @@ import { process } from './env.js'
 import { Configuration, OpenAIApi } from 'openai'
 
 const configuration = new Configuration({
-    apiKey: "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",
+    apiKey: process.env.OPENAI_API_KEY,
 })
 
 delete configuration.baseOptions.headers['User-Agent'];
