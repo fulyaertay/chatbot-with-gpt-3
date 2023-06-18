@@ -20,7 +20,7 @@
 - Storing the conversation using Realtime Firebase DB
 ```
 
-## !Important Note: OpeNAI API Key is not working, please create new secret key using (https://platform.openai.com/account/api-keys) website.
+## !Important Note: OpenAI API Key is not working, please create new secret key using (https://platform.openai.com/account/api-keys) website.
 
 ## Quick start:
 
