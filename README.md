@@ -7,7 +7,7 @@
 ## About the Project:
 ```bash
 - User can ask anything the chatbot.
-- Previous conversations are listed when uses reloads the page
+- Previous conversations are listed when user reloads the page
 - User can clear all conversations clicking "start over" button
 ```
 
