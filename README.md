@@ -1,21 +1,31 @@
-# co1c74712b325c129c140bdfb
+## Project: Chatbot with GPT-3
 
-Quick start:
+## Visulation of the App
+
+![image](./chatbot.png)
+
+## About the Project:
+```bash
+- User can ask anything the chatbot.
+- Previous conversations are listed when uses reloads the page
+- User can clear all conversations clicking "start over" button
+```
+
+## Using Technologies 💻
+```bash
+- JavaScript
+- HTML/CSS
+- GPT-3 model called as gpt-3.5-turbo
+- Presence and frequency penalties
+- Storing the conversation using Realtime Firebase DB
+```
+
+## !Important Note: OpeNAI API Key is not working, please create new secret key using (https://platform.openai.com/account/api-keys) website.
+
+## Quick start:
 
 ```
 $ npm install
 $ npm start
 ````
 
-Head over to https://vitejs.dev/ to learn more about using vite
-## About Scrimba
-
-At Scrimba our goal is to create the best possible coding school at the cost of a gym membership! 💜
-If we succeed with this, it will give anyone who wants to become a software developer a realistic shot at succeeding, regardless of where they live and the size of their wallets 🎉
-The Frontend Developer Career Path aims to teach you everything you need to become a Junior Developer, or you could take a deep-dive with one of our advanced courses 🚀
-
-- [Our courses](https://scrimba.com/allcourses)
-- [The Frontend Career Path](https://scrimba.com/learn/frontend)
-- [Become a Scrimba Pro member](https://scrimba.com/pricing)
-
-Happy Coding!
