@@ -15,6 +15,7 @@
 ```bash
 - JavaScript
 - HTML/CSS
+- OpenAI API Key
 - GPT-3 model called as gpt-3.5-turbo
 - Presence and frequency penalties
 - Storing the conversation using Realtime Firebase DB
