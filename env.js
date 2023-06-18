@@ -1,3 +1,4 @@
+//api key not working, please add your own key
 export const process = {
     env: {
         //api key is not used please add your own key
