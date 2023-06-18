@@ -2,6 +2,6 @@
 export const process = {
     env: {
         //api key is not used please add your own key
-        OPENAI_API_KEY: "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"
+        OPENAI_API_KEY: "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"
     }
 }
