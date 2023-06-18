@@ -15,6 +15,7 @@
 ```bash
 - JavaScript
 - HTML/CSS
+- Bundler as vite.js
 - OpenAI API Key
 - GPT-3 model called as gpt-3.5-turbo
 - Presence and frequency penalties
