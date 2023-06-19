@@ -1,5 +1,5 @@
 ## Project: Chatbot with GPT-3
-
+## Live Link: (https://chatbot-w-gpt-3.netlify.app/)
 ## Visulation of the App
 
 ![image](./chatbot.png)
@@ -30,4 +30,4 @@ $ npm start
 ````
 
 ## !Important Note: 
-If you run the project you can meet 429 error status code because OpenAI API Key is not working, please create new secret key using (https://platform.openai.com/account/api-keys) website.
+If you run the project you can meet 429 error status code because OpenAI API Key is not working, please create new secret key using (https://platform.openai.com/account/api-keys) website and add to env.js file
