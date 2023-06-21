@@ -1,8 +1,8 @@
 /// <reference types="cypress" />
 
-context('Open Home Page', () => {
+context('Sending message to OpenAI', () => {
    
-    it.only('Open Home Page', () => {
+    it.only('Sending message to OpenAI', () => {
       //open web page
       cy.visit('https://chatbot-w-gpt-3.netlify.app/')
       // typing on input box
