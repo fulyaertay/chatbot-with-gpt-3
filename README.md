@@ -11,7 +11,7 @@
 - User can clear all conversations clicking "start over" button
 ```
 
-## Using Technologies 💻
+## Using Technologies:
 ```bash
 - JavaScript
 - HTML/CSS
@@ -28,6 +28,11 @@
 $ npm install
 $ npm start
 ````
+## Testing:
 
+```
+$ npx cypress open or npx cypress run --browser chrome
+
+````
 ## !Important Note: 
 If you run the project you can meet 429 error status code because OpenAI API Key is not working, please create new secret key using (https://platform.openai.com/account/api-keys) website and add to env.js file
