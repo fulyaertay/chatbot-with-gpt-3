@@ -31,7 +31,7 @@ $ npm start
 ## Testing:
 
 ```
-$ npx cypress open or npm install cypress --save-dev
+$ npx cypress open or npx cypress run --browser chrome
 
 ````
 ## !Important Note: 
