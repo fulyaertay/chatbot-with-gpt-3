@@ -11,7 +11,7 @@
 - User can clear all conversations clicking "start over" button
 ```
 
-## Using Technologies 💻
+## Using Technologies:
 ```bash
 - JavaScript
 - HTML/CSS
@@ -28,7 +28,7 @@
 $ npm install
 $ npm start
 ````
-## Testing
+## Testing:
 
 ```
 $ npx cypress open or npm install cypress --save-dev
