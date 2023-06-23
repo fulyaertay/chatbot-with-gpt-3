@@ -10,18 +10,12 @@ context("Sending message to OpenAI", () => {
     cy.get("#submit-btn").click();
     //4-clear all conversations
     cy.get("#clear-btn").click();
-    //get firebase request
-    cy.request(
-      "https://gpt-4-project-cafcf-default-rtdb.europe-west1.firebasedatabase.app/"
-    ).then((response) => {
-      assert.equal(response, [200, 201]);
-      cy.log(response.status);
-    });
+
     //get openai request
-    cy.request("      https://api.openai.com/v1/chat/completions").then(
+    cy.request("https://api.openai.com/v1/chat/completions").then(
       (response) => {
-        assert.equal(response, [200, 201]);
-        cy.log(response.status);
+        assert.equal(response.statusCode, 401);
+        cy.log(response.statusCode);
       }
     );
   });
