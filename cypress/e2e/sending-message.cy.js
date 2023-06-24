@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+//control when sending message to OpenAI
 context("Sending message to OpenAI", () => {
   it.only("Sending message to OpenAI", () => {
     //1-open web page
@@ -14,9 +15,10 @@ context("Sending message to OpenAI", () => {
     //get openai request
     cy.request("https://api.openai.com/v1/chat/completions").then(
       (response) => {
-        assert.equal(response.statusCode, 401);
+        assert.equal(response.statusCode, [200,201]);
         cy.log(response.statusCode);
       }
     );
+    
   });
 });
